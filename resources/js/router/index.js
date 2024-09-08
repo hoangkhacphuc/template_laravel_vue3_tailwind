@@ -4,6 +4,7 @@ import {
 } from "vue-router";
 import {
     Index,
+    PageNotFound,
     Demo,
 } from "../views";
 import { DefaultLayout } from "../layouts";
@@ -20,7 +21,13 @@ const routes = [
         name: "demo",
         component: Demo,
         meta: { layout: DefaultLayout },
-    }
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "PageNotFound",
+        component: PageNotFound,
+        meta: { layout: DefaultLayout },
+    },
 ];
 
 const router = createRouter({
