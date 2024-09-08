@@ -25,8 +25,12 @@ ifeq (,$(wildcard .env))
 	cp .env.example .env
 endif
 
+.PHONY: npm-install
+npm-install:
+	npm install
+
 .PHONY: setup
-setup: env composer
+setup: env composer npm-install
 
 .PHONY: composer
 composer:
