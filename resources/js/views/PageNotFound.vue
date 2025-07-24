@@ -1,6 +1,8 @@
 <script setup>
     import '../assets/css/404.scss';
     import { useRouter } from "vue-router";
+    import { SEO } from '../components';
+
 </script>
 <template>
     <div class="w-full h-full overflow-hidden bg-404 relative select-none">

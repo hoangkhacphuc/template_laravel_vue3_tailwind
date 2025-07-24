@@ -6,11 +6,14 @@ import "vue3-toastify/dist/index.css";
 import "./assets/css/style.scss";
 import router from "./router";
 import App from "./App.vue";
+import { createHead } from '@vueuse/head'
 
 const pinia = createPinia();
+const head = createHead()
 
 const app = createApp(App)
     .use(router)
+    .use(head)
     .use(Vue3Lottie)
     .use(pinia)
     .use(Vue3Toasity, {
