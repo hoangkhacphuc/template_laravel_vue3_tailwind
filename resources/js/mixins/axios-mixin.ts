@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {defineComponent} from "vue";
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -9,7 +10,7 @@ if (csrfToken) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 }
 
-export default {
+export default defineComponent({
     methods: {
         async $get(url: string, params: object = {}, config: object = {}) {
             try {
@@ -65,4 +66,4 @@ export default {
             }
         },
     },
-};
+});
