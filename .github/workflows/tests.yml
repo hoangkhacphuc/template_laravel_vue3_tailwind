@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
 
       - name: 📥 Install PHP dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
+        run: make setup
 
       - name: ⚙️ Prepare Environment
         run: |
