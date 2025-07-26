@@ -2,7 +2,9 @@ import axios from 'axios';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+const csrfToken = document
+    .querySelector('meta[name="csrf-token"]')
+    ?.getAttribute('content');
 if (csrfToken) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 }
@@ -51,12 +53,16 @@ export default {
 
         $handleHttpError(error) {
             if (error.response) {
-                console.error('HTTP Error:', error.response.status, error.response.data);
+                console.error(
+                    'HTTP Error:',
+                    error.response.status,
+                    error.response.data
+                );
             } else if (error.request) {
                 console.error('No response from server:', error.request);
             } else {
                 console.error('Error setting up request:', error.message);
             }
-        }
-    }
+        },
+    },
 };

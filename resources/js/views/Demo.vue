@@ -14,22 +14,22 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            // You can add any data properties here if needed
-        };
-    },
-    methods: {
-        // You can add any methods here if needed
-        example(url) {
-            return this.$get(url)
-                .then(response => response.data)
-                .catch(error => {
-                    console.error("API Error:", error);
-                    throw error;
-                });
-        }
-    },
-};
+    export default {
+        data() {
+            return {
+                // You can add any data properties here if needed
+            };
+        },
+        methods: {
+            // You can add any methods here if needed
+            example(url) {
+                return this.$get(url)
+                    .then((response) => response.data)
+                    .catch((error) => {
+                        console.error('API Error:', error);
+                        throw error;
+                    });
+            },
+        },
+    };
 </script>
