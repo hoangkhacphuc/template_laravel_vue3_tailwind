@@ -1,18 +1,6 @@
 name: Linting Tests
 
-on:
-  push:
-    paths:
-      - '**.php'
-      - '**.js'
-      - '**.vue'
-      - '**.ts'
-  pull_request:
-    paths:
-      - '**.php'
-      - '**.js'
-      - '**.vue'
-      - '**.ts'
+on: [push, pull_request]
 
 jobs:
   lint:
