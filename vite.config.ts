@@ -19,6 +19,13 @@ export default defineConfig({
             '@images': path.resolve(__dirname, './resources/js/assets/images'),
         },
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: ['legacy-js-api'],
+            },
+        },
+    },
     server: {
         host: "0.0.0.0",
         hmr: {
