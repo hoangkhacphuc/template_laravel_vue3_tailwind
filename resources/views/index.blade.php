@@ -24,6 +24,6 @@
 </head>
 <body>
     <div id="app"></div>
-    @vite(['resources/js/main.js'])
+    @vite(['resources/js/App.ts'])
 </body>
 </html>

@@ -7,11 +7,23 @@ import './assets/css/style.scss';
 import router from './router';
 import App from './App.vue';
 import { createHead } from '@vueuse/head';
-import { i18n } from './i18n';
 import appMixin from './mixins/app-mixin';
+import { createI18n } from 'vue-i18n';
+import en from './locales/en.json';
+import vi from './locales/vi.json';
 
 const pinia = createPinia();
 const head = createHead();
+
+const i18n = createI18n({
+    legacy: false,
+    locale: 'vi',
+    fallbackLocale: 'en',
+    messages: {
+        en,
+        vi,
+    },
+});
 
 const app = createApp(App)
     .use(router)

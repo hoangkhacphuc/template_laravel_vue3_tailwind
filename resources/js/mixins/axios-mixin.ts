@@ -11,7 +11,7 @@ if (csrfToken) {
 
 export default {
     methods: {
-        async $get(url, params = {}, config = {}) {
+        async $get(url: string, params: object = {}, config: object = {}) {
             try {
                 const response = await axios.get(url, { params, ...config });
                 return response.data;
@@ -21,7 +21,7 @@ export default {
             }
         },
 
-        async $post(url, data = {}, config = {}) {
+        async $post(url: string, data = {}, config = {}) {
             try {
                 const response = await axios.post(url, data, config);
                 return response.data;
@@ -31,7 +31,7 @@ export default {
             }
         },
 
-        async $put(url, data = {}, config = {}) {
+        async $put(url: string, data = {}, config = {}) {
             try {
                 const response = await axios.put(url, data, config);
                 return response.data;
@@ -41,7 +41,7 @@ export default {
             }
         },
 
-        async $delete(url, config = {}) {
+        async $delete(url: string, config = {}) {
             try {
                 const response = await axios.delete(url, config);
                 return response.data;
@@ -51,7 +51,7 @@ export default {
             }
         },
 
-        $handleHttpError(error) {
+        $handleHttpError(error: any) {
             if (error.response) {
                 console.error(
                     'HTTP Error:',

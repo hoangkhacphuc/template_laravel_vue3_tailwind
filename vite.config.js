@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 import dotenv from "dotenv";
+import path from 'path';
+import { resolve } from 'node:path';
 
 dotenv.config();
 export default defineConfig({
@@ -12,6 +14,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './resources/js'),
+            '@images': path.resolve(__dirname, './resources/js/assets/images'),
+        },
+    },
     server: {
         host: "0.0.0.0",
         hmr: {
