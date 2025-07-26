@@ -17,7 +17,7 @@ const head = createHead();
 
 const i18n = createI18n({
     legacy: false,
-    locale: 'vi',
+    locale: import.meta.env.VITE_APP_LOCALE || 'en',
     fallbackLocale: 'en',
     messages: {
         en,

@@ -1,6 +1,6 @@
 <script setup>
     import { useHead } from '@vueuse/head';
-    import images from '../constants/images';
+    import Logo from '@images/logo.png';
     const baseURL = import.meta.env.VITE_APP_URL;
 
     useHead({
@@ -16,7 +16,7 @@
             },
             {
                 property: 'og:image',
-                content: baseURL + images.Logo,
+                content: baseURL + Logo,
             },
         ],
     });
