@@ -1,30 +1,23 @@
-import {
-    createRouter,
-    createWebHistory,
-} from "vue-router";
-import {
-    Index,
-    PageNotFound,
-    Demo,
-} from "../views";
-import { DefaultLayout } from "../layouts";
+import { createRouter, createWebHistory } from 'vue-router';
+import { Index, PageNotFound, Demo } from '../views';
+import { DefaultLayout } from '../layouts';
 
 const routes = [
     {
-        path: "/",
-        name: "index",
+        path: '/',
+        name: 'index',
         component: Index,
         meta: { layout: DefaultLayout },
     },
     {
-        path: "/demo",
-        name: "demo",
+        path: '/demo',
+        name: 'demo',
         component: Demo,
         meta: { layout: DefaultLayout },
     },
     {
-        path: "/:pathMatch(.*)*",
-        name: "PageNotFound",
+        path: '/:pathMatch(.*)*',
+        name: 'PageNotFound',
         component: PageNotFound,
         meta: { layout: DefaultLayout },
     },

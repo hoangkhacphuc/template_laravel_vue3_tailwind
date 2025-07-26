@@ -1,1 +1,1 @@
-export { default as SEO } from "./SEO.vue";
+export { default as SEO } from './SEO.vue';

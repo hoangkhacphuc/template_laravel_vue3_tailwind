@@ -1,8 +1,7 @@
 <script setup>
     import '../assets/css/404.scss';
-    import { useRouter } from "vue-router";
+    import { useRouter } from 'vue-router';
     import { SEO } from '../components';
-
 </script>
 <template>
     <div class="w-full h-full overflow-hidden bg-404 relative select-none">
@@ -20,7 +19,9 @@
         <div class="error">
             <div class="error__title">404</div>
             <div class="error__subtitle">Hmmm...</div>
-            <div class="error__description">It seems like you've accessed the wrong page</div>
+            <div class="error__description">
+                It seems like you've accessed the wrong page
+            </div>
             <router-link to="/" class="go_home">Go Home</router-link>
         </div>
 

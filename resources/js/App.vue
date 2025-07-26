@@ -1,15 +1,15 @@
 <script setup>
-import { useRouter } from "vue-router";
-import { onMounted } from "vue";
+    import { useRouter } from 'vue-router';
+    import { onMounted } from 'vue';
 
-const router = useRouter();
+    const router = useRouter();
 
-onMounted(() => {
-    window.addEventListener("vite:preloadError", (event) => {
-        event.preventDefault();
-        window.location.reload();
+    onMounted(() => {
+        window.addEventListener('vite:preloadError', (event) => {
+            event.preventDefault();
+            window.location.reload();
+        });
     });
-});
 </script>
 
 <template>

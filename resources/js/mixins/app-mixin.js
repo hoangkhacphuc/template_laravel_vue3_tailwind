@@ -11,8 +11,8 @@
  * }
  */
 
-import i18nMixin from "./i18n-mixin";
+import i18nMixin from './i18n-mixin';
 
 export default {
     mixins: [i18nMixin],
-}
+};
