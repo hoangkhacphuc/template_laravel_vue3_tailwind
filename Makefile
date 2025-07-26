@@ -14,6 +14,10 @@ migrate:
 seed:
 	php artisan db:seed --force
 
+.PHONY: generate-key
+generate-key:
+	php artisan key:generate --force
+
 .PHONY: test
 test:
 	php artisan test
@@ -30,7 +34,7 @@ npm-install:
 	npm install
 
 .PHONY: setup
-setup: env composer npm-install
+setup: env composer npm-install migrate seed generate-key
 
 .PHONY: composer
 composer:
