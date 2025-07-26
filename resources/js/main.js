@@ -7,6 +7,8 @@ import "./assets/css/style.scss";
 import router from "./router";
 import App from "./App.vue";
 import { createHead } from '@vueuse/head'
+import { i18n } from './i18n'
+import appMixin from './mixins/app-mixin'
 
 const pinia = createPinia();
 const head = createHead()
@@ -16,8 +18,10 @@ const app = createApp(App)
     .use(head)
     .use(Vue3Lottie)
     .use(pinia)
+    .use(i18n)
     .use(Vue3Toasity, {
         autoClose: 3000,
         multiple: false,
     })
+    .mixin(appMixin)
     .mount("#app");
