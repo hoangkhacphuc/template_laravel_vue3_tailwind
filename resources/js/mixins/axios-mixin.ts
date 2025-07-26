@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {defineComponent} from "vue";
+import { defineComponent } from 'vue';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
