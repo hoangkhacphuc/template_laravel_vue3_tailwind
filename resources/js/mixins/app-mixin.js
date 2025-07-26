@@ -12,7 +12,11 @@
  */
 
 import i18nMixin from './i18n-mixin';
+import axiosMixin from "./axios-mixin";
 
 export default {
-    mixins: [i18nMixin],
+    mixins: [
+        i18nMixin,
+        axiosMixin
+    ],
 };

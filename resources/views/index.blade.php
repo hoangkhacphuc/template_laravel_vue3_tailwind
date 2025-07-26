@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,7 +16,10 @@
     <meta property="og:description" content="Đây là một trang web được xây dựng bằng Laravel và Vite">
     <meta property="og:site_name" content="Đây là tên trang web">
     <meta property="og:type" content="website">
-    <title>Document</title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
