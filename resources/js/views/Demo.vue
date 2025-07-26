@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import {storage} from '@/services/storage.service';
+    import { storage } from '@/services/storage.service';
 
     export default {
         data() {
@@ -45,7 +45,7 @@
             testLocalStorage() {
                 storage.set('test', 'test');
                 console.log(storage.get('test'));
-            }
+            },
         },
     };
 </script>
