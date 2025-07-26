@@ -1,0 +1,38 @@
+name: Tests
+
+on: [pull_request]
+
+jobs:
+  testing:
+    name: Testing Laravel Application
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: 🛒 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🐘 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, dom, pdo_sqlite
+          coverage: none
+
+      - name: 📦 Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+
+      - name: 📥 Install PHP dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: ⚙️ Prepare Environment
+        run: |
+          cp .env.example .env
+          sed -i "s/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g" .env
+          sed -i "s/DB_DATABASE=core_laravel_vue/DB_DATABASE=:memory:/g" .env
+          chmod -R 775 storage bootstrap/cache
+
+      - name: ✅ Run Tests
+        run: php artisan test

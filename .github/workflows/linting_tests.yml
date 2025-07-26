@@ -1,0 +1,48 @@
+name: Linting Tests
+
+on:
+  push:
+    paths:
+      - '**.php'
+      - '**.js'
+      - '**.vue'
+      - '**.ts'
+  pull_request:
+    paths:
+      - '**.php'
+      - '**.js'
+      - '**.vue'
+      - '**.ts'
+
+jobs:
+  lint:
+    name: Lint Laravel & Vue
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧰 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📦 Install Node.js dependencies
+        run: npm ci
+
+      - name: 💅 Run Prettier check for JS/Vue
+        run: npx prettier --check "resources/js/**/*.{js,ts,vue}"
+
+      - name: 🐘 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, dom
+          coverage: none
+
+      - name: 📦 Install Composer dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      - name: ✅ Run Laravel Pint
+        run: ./vendor/bin/pint --test
