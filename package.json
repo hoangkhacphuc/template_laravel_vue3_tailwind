@@ -13,6 +13,7 @@
         "@vueuse/head": "^2.0.0",
         "axios": "^1.7.3",
         "cross-env": "^7.0.3",
+        "date-fns": "^4.1.0",
         "dotenv": "^16.6.1",
         "laravel-vite-plugin": "^1.0.5",
         "pinia": "^2.2.0",
