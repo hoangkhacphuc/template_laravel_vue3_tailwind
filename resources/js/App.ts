@@ -7,10 +7,10 @@ import './assets/css/style.scss';
 import router from './router';
 import App from './App.vue';
 import { createHead } from '@vueuse/head';
-import appMixin from './mixins/app-mixin';
 import { createI18n } from 'vue-i18n';
 import en from './locales/en.json';
 import vi from './locales/vi.json';
+import appMixin from './mixins/app-mixin';
 
 const pinia = createPinia();
 const head = createHead();
