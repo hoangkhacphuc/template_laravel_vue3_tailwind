@@ -10,6 +10,11 @@
             class="px-5 py-2 text-white rounded-[12px] border-[1px] text-sm flex items-center justify-center cursor-pointer select-none">
             Test API
         </button>
+        <button
+            @click="testLocalStorage"
+            class="px-5 py-2 text-white rounded-[12px] border-[1px] text-sm flex items-center justify-center cursor-pointer select-none">
+            Test Local Storage
+        </button>
         <router-link
             to="/"
             class="w-[250px] h-[70px] text-white rounded-[12px] border-[1px] text-sm flex items-center justify-center cursor-pointer select-none"
@@ -19,6 +24,8 @@
 </template>
 
 <script>
+    import {storage} from '@/services/storage.service';
+
     export default {
         data() {
             return {
@@ -35,6 +42,10 @@
                         throw error;
                     });
             },
+            testLocalStorage() {
+                storage.set('test', 'test');
+                console.log(storage.get('test'));
+            }
         },
     };
 </script>
