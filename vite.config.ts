@@ -3,7 +3,6 @@ import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 import dotenv from "dotenv";
 import path from 'path';
-import { resolve } from 'node:path';
 
 dotenv.config();
 export default defineConfig({
@@ -31,7 +30,7 @@ export default defineConfig({
                 if (!origin || origin === allowedOrigin) {
                     callback(null, true);
                 } else {
-                    callback(new Error('Not allowed by CORS'));
+                    callback(new Error('Not allowed by CORS'), false);
                 }
             },
             methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
